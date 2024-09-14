@@ -1,0 +1,525 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.app {
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* padding: 0.5rem; */
+    /* background-color: #f8f8f8; */
+}
+
+h1.logo:hover {
+    cursor: pointer;
+    color: #ffa500;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin-right: 15px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+nav ul li.active {
+    /* color: #ffa500; */
+    border-bottom: 2px solid #ffa500;
+}
+
+h1.logo {
+    color: #27c1e0;
+    font-weight: bold;
+    /* font-size: 20px; */
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.burger-promo, .burger-menu {
+    text-align: center;
+}
+
+.burger-menu h1, h2{
+    margin: 0;
+}
+
+.burger-menu h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.burger-menu h2 {
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: -3px;
+    margin-bottom: 5rem;
+}
+
+.price {
+    font-size: 2.5em;
+    color: #ffa500;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.burger-title {
+    font-size: 2.5em;
+    margin: 20px 0;
+}
+
+.burger-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.order-button {
+    background-color: #ffa500;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.burger-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+}
+
+.menu-item {
+    text-align: center;
+    margin: 0 2px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    /* box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5); */
+}
+
+.menu-item:hover {
+    cursor: pointer;
+}
+
+.menu-item:hover img.burger-image {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-item:hover .item-name {
+    color: #ffa500;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu-item:hover .item-price {
+    color: #27c1e0;
+    transition: color 0.3s ease-in-out;
+}
+
+.burger-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    flex-grow: 1;
+}
+
+.burger-info p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+p.item-name {
+    color: #27c1e0;;
+}
+
+p.item-price {
+    color: #ffa500;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.social-icons span, .language span {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.language span.active {
+    color: #ffa500;
+}
+
+@media (max-width: 480px) {
+    .app {
+        max-width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        margin-top: 10px;
+    }
+
+    .burger-title {
+        font-size: 2em;
+    }
+
+    .price {
+        font-size: 2em;
+    }
+
+    .burger-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .menu-item .burger-info {
+        margin-top: 0.5rem;
+    }
+
+    .menu-item .burger-info p {
+        font-size: 12px;
+    }
+
+    .burger-menu h2 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.back-arrow {
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.cart-back-arrow {
+    top: 10px;
+    left: 20px;
+    z-index: 10;
+}
+
+.back-arrow:hover {
+    color: #ffa500;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.burger-promo {
+    position: relative;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 10px;
+}
+
+.category-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.category-btn.active {
+    color: #ffa500;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .burger-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .burger-info p {
+        font-size: 14px;
+    }
+
+    .category-btn {
+        font-size: 14px;
+    }
+}
+
+.burger-promo .burger-image {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+    .burger-promo .burger-image {
+        max-width: 200px;
+    }
+}
+
+.price-calculator {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.quantity-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.quantity-btn {
+    background-color: #ffa500;
+    border: none;
+    color: white;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* Remove arrows from number input */
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.quantity-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.quantity-input {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    margin: 0 10px;
+    border: 1px solid #ffa500;
+    background-color: transparent;
+    color: white;
+}
+
+.total-price {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.unit-price, .total-amount {
+    font-weight: bold;
+    color: #ffa500;
+}
+
+.order-button {
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.cart-button {
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    background-color: #ffffff;
+    color: #ffa500;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50px;
+    z-index: 1000;
+}
+
+.cart-view {
+    position: relative;
+    padding-top: 40px; /* Add some top padding to accommodate the back arrow */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cart-view h2 {
+    margin-top: 0;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.cart-item-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-details h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.cart-item-details p {
+    margin: 5px 0 0;
+    color: #666;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-actions button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.item-quantity {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+
+.cart-view {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cart-view h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.cart-item-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-details h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #ffa500;
+}
+
+.cart-item-details p {
+    margin: 5px 0 0;
+    color: #27c1e0;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-actions button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    color: #ffffff;
+}
+
+.item-quantity {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
